@@ -1,6 +1,6 @@
 spring:
   mongodb:
-    uri: "mongodb+srv://devilaal30515_db_user:123@cluster0.2wjvbgz.mongodb.net/journaldb?retryWrites=true&w=majority"
+    uri: ""
     database: journaldb
   data:
     mongodb:
