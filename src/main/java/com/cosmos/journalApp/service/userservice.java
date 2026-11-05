@@ -25,21 +25,24 @@ public class userservice {
 
 
 
-    public boolean savenewuser(users users){
-       try {
-           users.setPassword(encoder.encode(users.getPassword()));
-           users.setRoles(Arrays.asList("USER"));
-           userrepository.save(users);
-           return true;
-       }
-       catch (Exception e) {
+    public boolean savenewuser(users users) {
+        try {
+            users.setPassword(encoder.encode(users.getPassword()));
+            users.setRoles(Arrays.asList("USER"));
 
-           return false;
-       }
+
+
+            userrepository.save(users);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();   // or log.error(...), so failures are visible
+            return false;
+        }
     }
     public void saveadmin(users users){
-        users.setPassword(encoder.encode(users.getPassword()));
-        users.setRoles(Arrays.asList("USER","ADMIN"));
+
+      users.setPassword(encoder.encode(users.getPassword()));
+      users.setRoles(Arrays.asList("USER","ADMIN"));
         userrepository.save(users);
     }
     public void saveuser(users users){
@@ -61,4 +64,8 @@ public class userservice {
     public users findusername(String username){
         return userrepository.findByusername(username);
     }
+//    public void adduseradmin(users users){
+//        users.setRoles(Arrays.asList("USER","ADMIN"));
+//
+//    }
 }

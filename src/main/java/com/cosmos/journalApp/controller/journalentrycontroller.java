@@ -105,6 +105,7 @@ public class journalentrycontroller {
             journalentry old = journalentry.get();
             old.setTitle(j.getTitle() != null && !j.getTitle().equals("") ? j.getTitle() : old.getTitle());
             old.setContent(j.getContent() != null && !j.getContent().equals("") ? j.getContent() : old.getContent());
+            if (j.getSentiment() != null) old.setSentiment(j.getSentiment());
             journalentryservice.saveentry(old);
             return new ResponseEntity<>(old, HttpStatus.OK);
         }
@@ -113,7 +114,17 @@ public class journalentrycontroller {
     }
     return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 }
+    @PostMapping("/bulk")
+    public ResponseEntity<journalentry> createEntry(@RequestBody journalentry myEntry) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
 
+        if (myEntry.getSentiment() == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);   // mood is required
+        }
+        journalentryservice.saveentry(myEntry, username);          // your existing save call
+        return new ResponseEntity<>(myEntry, HttpStatus.CREATED);
+    }
 
 
 }
