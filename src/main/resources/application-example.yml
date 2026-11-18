@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 spring:
   data:
     mongodb:
@@ -24,3 +25,31 @@ server:
 weather :
   api:
     key : XXXXXXXXXXXXXXXXX
+=======
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+
+    redis:
+      url: ${REDIS_URL}
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+server:
+  port: 8080
+#  servlet:
+#    context-path: /journal
+weather :
+  api:
+    key : XXXXXXXXXXXXXXXXX
+>>>>>>> 9e168c4de85a7e6527e4f813802a92791cfa7fda

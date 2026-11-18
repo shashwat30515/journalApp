@@ -1,6 +1,10 @@
 spring:
   mongodb:
+<<<<<<< HEAD
     uri:
+=======
+    uri: ""
+>>>>>>> 9e168c4de85a7e6527e4f813802a92791cfa7fda
     database: journaldb
   data:
     mongodb:
