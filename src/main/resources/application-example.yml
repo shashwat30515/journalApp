@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 spring:
   data:
     mongodb:
@@ -6,10 +6,17 @@ spring:
 
     redis:
       url: ${REDIS_URL}
-
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${"client id"}
+            client-secret: ${"clientsecret"}
   mail:
     host: smtp.gmail.com
     port: 587
+
     username: ${MAIL_USERNAME}
     password: ${MAIL_PASSWORD}
     properties:
@@ -18,38 +25,10 @@ spring:
           auth: true
           starttls:
             enable: true
-server:
+  server:
   port: 8080
 #  servlet:
-#    context-path: /journal
-weather :
+#    context-path: /journalweather :
   api:
     key : XXXXXXXXXXXXXXXXX
-=======
-spring:
-  data:
-    mongodb:
-      uri: ${MONGODB_URI}
 
-    redis:
-      url: ${REDIS_URL}
-
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-server:
-  port: 8080
-#  servlet:
-#    context-path: /journal
-weather :
-  api:
-    key : XXXXXXXXXXXXXXXXX
->>>>>>> 9e168c4de85a7e6527e4f813802a92791cfa7fda
