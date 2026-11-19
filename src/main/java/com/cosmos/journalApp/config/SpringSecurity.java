@@ -31,6 +31,7 @@ public class SpringSecurity {
             DaoAuthenticationProvider authenticationProvider) throws Exception {
 
         return http
+                .cors(Customizer.withDefaults())
                 .authenticationProvider(authenticationProvider)
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/public/**").permitAll()
