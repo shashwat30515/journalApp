@@ -5,7 +5,7 @@ import com.cosmos.journalApp.repository.userrepository;
 import com.cosmos.journalApp.service.customuserdetailserviceimpl;
 import com.cosmos.journalApp.utils.jwtutils;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.validator.constraints.Range;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
@@ -80,6 +80,7 @@ public class googleAuthcontroller {
                 }catch (Exception e){
                     users user = new users();
                     user.setEmail(email);
+
                     user.setUsername(email);
                     user.setPassword(passwordEncoder.encode(UUID.randomUUID().toString()));
                     user.setRoles(Arrays.asList("USER"));
