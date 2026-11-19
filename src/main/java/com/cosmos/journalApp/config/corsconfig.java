@@ -15,6 +15,7 @@ public class corsconfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("https://journal-app-frontend-lake.vercel.app/")
+                        .allowedOrigins("http://localhost:5173/")
                         .allowedMethods("GET","POST","PUT","DELETE")
                         .allowedHeaders("*");
             }
