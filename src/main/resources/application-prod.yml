@@ -8,7 +8,13 @@ spring:
       auto-index-creation: true
 
     redis:
-      url: ${REDIS_URL}
+
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD}
+      ssl:
+          enabled: true
+
 
   security:
     oauth2:
