@@ -6,17 +6,18 @@ spring:
 
     redis:
       url: ${REDIS_URL}
+
   security:
     oauth2:
       client:
         registration:
           google:
-            client-id: ${"client id"}
-            client-secret: ${"clientsecret"}
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+
   mail:
     host: smtp.gmail.com
     port: 587
-
     username: ${MAIL_USERNAME}
     password: ${MAIL_PASSWORD}
     properties:
@@ -25,10 +26,17 @@ spring:
           auth: true
           starttls:
             enable: true
+
   server:
   port: ${PORT:8080}
 #  servlet:
 #    context-path: /journalweather :
-  api:
-    key : XXXXXXXXXXXXXXXXX
 
+
+
+server:
+  port: ${PORT:8080}
+
+weather:
+  api:
+    key: ${WEATHER_API_KEY}
