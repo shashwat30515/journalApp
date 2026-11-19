@@ -19,8 +19,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
                 public void addCorsMappings(CorsRegistry registry) {
                     registry.addMapping("/**")
                             .allowedOrigins(
-                                    "https://journal-app-frontend-lake.vercel.app",
-                                    "http://localhost:5173"
+                                    "https://journal-app-frontend-7l2mcko91-shashwat30515s-projects.vercel.app/",
+                                    "http://localhost:5173/"
                             )
                             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                             .allowedHeaders("*");
