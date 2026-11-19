@@ -1,15 +1,13 @@
 spring:
   mongodb:
-<<<<<<< HEAD
-    uri:
-=======
-    uri: ""
->>>>>>> 9e168c4de85a7e6527e4f813802a92791cfa7fda
+    uri: mongodb://localhost:27017/journaldb
     database: journaldb
+
   data:
     mongodb:
       auto-index-creation: true
+
 server:
   port: 8080
-servelet:
-  context-path: /journal
+  servlet:
+    context-path: /journal

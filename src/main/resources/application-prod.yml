@@ -1,8 +1,11 @@
-
 spring:
+  mongodb:
+    uri: ${MONGODB_URI}
+    database: journaldb
+
   data:
     mongodb:
-      uri: ${MONGODB_URI}
+      auto-index-creation: true
 
     redis:
       url: ${REDIS_URL}
@@ -27,15 +30,10 @@ spring:
           starttls:
             enable: true
 
-  server:
-  port: ${PORT:8080}
-#  servlet:
-#    context-path: /journalweather :
-
-
-
 server:
   port: ${PORT:8080}
+  servlet:
+    context-path: /journal
 
 weather:
   api:
