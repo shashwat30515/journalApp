@@ -62,7 +62,7 @@ public class googleAuthcontroller {
             params.add("code", code);
             params.add("client_id", clientId);
             params.add("client_secret", clientSecret);
-            params.add("redirect_uri", "http://localhost:5173/oauth2/callback");
+            params.add("redirect_uri", "https://journal-app-frontend-lake.vercel.app/oauth2/callback");
             params.add("grant_type", "authorization_code");
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
